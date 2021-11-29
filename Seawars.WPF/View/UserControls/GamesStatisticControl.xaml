@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Seawars.WPF.Authorization.View.UserControls.GamesStatisticControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local="clr-namespace:Seawars.WPF.Authorization.View.UserControls"
+             mc:Ignorable="d" 
+             DataContext="{Binding UserPageViewModel, Source={StaticResource Locator}}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <Button VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Height="30"
+                Content="Back"
+                Width="50"
+                Command="{Binding BackCommand}"
+                Background="White"/>
+
+        <DataGrid 
+            Background="{x:Null}"
+            ItemsSource="{Binding Games}" 
+            IsReadOnly="True" 
+            SelectionMode="Single"
+            FontSize="14"
+            AutoGenerateColumns="False" 
+            BorderBrush="{x:Null}"
+            CanUserDeleteRows="False"
+            CanUserAddRows="False"
+            CanUserResizeColumns="False"
+            CanUserResizeRows="False"
+            Margin="0,30,0,0"
+            SelectedValue="{Binding SelectedGame}"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Number" Width="80" Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="Status" Width="80" Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="" Width="*"  Binding="{Binding Hint}"/>
+            </DataGrid.Columns>
+            <DataGrid.InputBindings>
+                <MouseBinding Gesture="LeftDoubleClick" 
+                              Command="{Binding GameDetailsCommand}" />
+            </DataGrid.InputBindings>
+
+        </DataGrid>
+
+    </Grid>
+</UserControl>

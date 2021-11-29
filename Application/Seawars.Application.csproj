@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Seawars.Domain\Seawars.Domain.csproj" />
+    <ProjectReference Include="..\Seawars.Infrastructure\Seawars.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

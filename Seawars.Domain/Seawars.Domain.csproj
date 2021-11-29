@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Seawars.Infrastructure\Seawars.Infrastructure.csproj" />
+    <ProjectReference Include="..\Seawars.Interfaces\Seawars.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
+ 
